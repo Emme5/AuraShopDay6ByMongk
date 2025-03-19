@@ -1,7 +1,6 @@
 import { Image, Pressable } from 'react-native';
 import { View, Text } from '@/components/Themed';
 import React from 'react';
-import { useTheme } from '@/providers/ThemeProvider'
 
 export default function ProductCard({
   productname, 
@@ -9,31 +8,15 @@ export default function ProductCard({
   productimage,
   postDate,
   description,
-  onPress,
+  onPress
 }: any) {
-  const { theme } = useTheme()
-
   return (
-    <Pressable 
-      onPress={onPress} 
-      className={`flex flex-col border-b ${
-        theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
-      }`}
-      android_ripple={{ 
-        color: 'rgba(104, 104, 104, 0.3)',
-        foreground: true,
-        borderless: false
-      }}
-      style={({ pressed }) => [
-        {
-          opacity: pressed ? 0.9 : 1,
-        },
-      ]}
-    >
-      <View className="p-4 !bg-transparent">
+    <Pressable onPress={onPress} className="flex flex-col shadow-md my-[1px] dark:bg-gray-800 bg-white" android_ripple={{ color: 'rgba(104, 104, 104, 0.3)' }}>
+      
+      <View className="p-4">
         <Image
           source={{uri: productimage}}
-          className="w-full h-64 rounded-xl"
+          className="w-full h-48 rounded-xl"
           resizeMode="cover"
         />
         <Text
@@ -44,18 +27,18 @@ export default function ProductCard({
         >
           {productname}
         </Text>
-        <View className="flex flex-row justify-between mt-2 !bg-transparent">
+        <View className="flex flex-row justify-between mt-2">
           <Text
             className="text-lg !text-gray-400"
             fontWeight='medium'
           >
-            {productprice}
+            {productprice} บาท
           </Text>
           <Text
             className="text-md !text-gray-400 mt-1"
             fontWeight='medium'
           >
-            {postDate}
+            เมื่อ {postDate}
           </Text>
         </View>
         <Text

@@ -8,38 +8,20 @@ interface ProductBookmarkCardProps {
   price: string;
   status: string;
   onPress: () => void;
-  theme: 'light' | 'dark';
 }
 
-export default function ProductBookmarkCard({ image, title, price, status, onPress, theme }: ProductBookmarkCardProps) {
+const ProductBookmarkCard: React.FC<ProductBookmarkCardProps> = ({ image, title, price, status, onPress }) => {
   return (
-    <Pressable 
-      onPress={onPress} 
-      className={`flex flex-col border-b ${
-        theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
-      }`}
-      android_ripple={{ 
-        color: 'rgba(104, 104, 104, 0.3)',
-        foreground: true,
-        borderless: false
-      }}
-      style={({ pressed }) => [
-        {
-          opacity: pressed ? 0.9 : 1,
-        },
-      ]}
-    >
-      <View className="flex flex-row p-4 !bg-transparent">
+    <Pressable onPress={onPress} className="shadow-md my-[1px] dark:bg-gray-800 bg-white" android_ripple={{ color: 'rgba(104, 104, 104, 0.3)' }}>
+      <View className="flex-row items-center px-4 py-2">
         <Image source={{ uri: image }} className="w-16 h-16 rounded" />
-        <View className="flex-1 ml-4 !bg-transparent">
+        <View className="flex-1 ml-4">
           <Text className="text-lg" numberOfLines={2} ellipsizeMode="tail">{title}</Text>
-          <Text className={`text-sm ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-          }`}>
-            {price} - {status}
-          </Text>
+          <Text className="!text-gray-400">{price} - {status}</Text>
         </View>
       </View>
     </Pressable>
   );
 };
+
+export default ProductBookmarkCard;

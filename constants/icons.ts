@@ -12,8 +12,6 @@ import eyeHide from "../assets/icons/eye-hide.png"
 import eye from "../assets/icons/eye.png"
 import play from "../assets/icons/play.png"
 import setting from "../assets/icons/setting.png"
-import flagth from "../assets/icons/thailand.png"
-import flagen from "../assets/icons/united-kingdom.png"
 
 export default {
   bookmark,
@@ -30,6 +28,4 @@ export default {
   eye,
   play,
   setting,
-  flagth,
-  flagen,
 }
