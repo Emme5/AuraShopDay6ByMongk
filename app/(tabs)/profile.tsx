@@ -12,10 +12,10 @@ export default function Profile() {
           {/* Profile Info */}
           <View className="items-center mb-6 mt-5">
             <Image
-              source={{ uri: 'https://www.itgenius.co.th/backend/assets/images/user_avatar/2qxyqud0ha7wj4nf6p26xxy0heoyyxkz.jpg' }}
+              source={{ uri: 'https://i.pinimg.com/736x/17/46/f7/1746f7772ce6bd63007c166f7f0ab2de.jpg' }}
               className="w-20 h-20 rounded-full"
             />
-            <Text className="text-3xl mt-5" fontWeight='medium'>สามิตร โกยม</Text>
+            <Text className="text-3xl mt-5" fontWeight='medium'>Mongkol Suphamanee</Text>
             <Text className="text-blue-400 text-base">ดูโปรไฟล์ Marketplace</Text>
           </View>
 

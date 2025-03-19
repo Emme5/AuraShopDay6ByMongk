@@ -204,7 +204,7 @@ export default function Home() {
                 <Text className="font-pmedium text-md text-gray-100">
                   ยินดีต้อนรับ
                 </Text>
-                <Text className="text-2xl text-white">สามิตร โกยม</Text>
+                <Text className="text-2xl text-white">Mongkol Suphamanee</Text>
               </View>
 
               <View className="mt-1.5">
